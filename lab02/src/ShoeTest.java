@@ -1,3 +1,6 @@
+/**
+ * JUnit test class for shoes
+ */
 public class ShoeTest {
   public static void main(String[] args){
     Shoe shoe1=new Shoe("tennis","Black","Nike",7.5);
