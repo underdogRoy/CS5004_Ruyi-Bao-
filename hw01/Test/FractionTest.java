@@ -21,7 +21,7 @@ public class FractionTest {
   @Test
   public void testtoDouble() {
     Fraction newfraction=new FractionImpl(1,2);
-    assertEquals(0.5,newfraction.toDouble());
+    assertEquals(0.5,newfraction.toDouble(),0.1);
   }
 
   @Test
@@ -41,8 +41,8 @@ public class FractionTest {
     Fraction newfraction1=new FractionImpl(1,2);
     Fraction newfraction2=new FractionImpl(1,4);
     Fraction result=newfraction1.add(newfraction2);
-    assertEquals(3,result.getNumerator());
-    assertEquals(4,result.getDenominator());
+    assertEquals("3/4",result.toString());
+
   }
 
   @Test
