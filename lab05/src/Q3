@@ -1,0 +1,2 @@
+When using the Comparable interface in the Shape interface, we need to add compareTo methods to each shape classes (Circle, Rectangle, and Triangle).
+However, without modifying the existing code, we only need to create a new comparator class for perimeter-based comparisons.
