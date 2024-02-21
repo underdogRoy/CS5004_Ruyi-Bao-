@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CS5004_Ruyi-Bao-.iml" filepath="$PROJECT_DIR$/.idea/CS5004_Ruyi-Bao-.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class/class.iml" filepath="$PROJECT_DIR$/class/class.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw01/hw01.iml" filepath="$PROJECT_DIR$/hw01/hw01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw02/hw02.iml" filepath="$PROJECT_DIR$/hw02/hw02.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab01/lab01.iml" filepath="$PROJECT_DIR$/lab01/lab01.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab03/lab03.iml" filepath="$PROJECT_DIR$/lab03/lab03.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab04/lab04.iml" filepath="$PROJECT_DIR$/lab04/lab04.iml" />
