@@ -1,15 +1,15 @@
-package listadt;
+package src;
 
 import bookutil.Book;
 
 /**
  * This class represents an element node in the list adt implementation.
  */
-public class BookListADTElementNode implements BookListADTNode {
+public class BookListADTElementNode implements listadt.BookListADTNode {
   private Book book;
-  private BookListADTNode rest;
+  private listadt.BookListADTNode rest;
 
-  public BookListADTElementNode(Book p, BookListADTNode rest) {
+  public BookListADTElementNode(Book p, listadt.BookListADTNode rest) {
     this.book = p;
     this.rest = rest;
   }
@@ -18,18 +18,18 @@ public class BookListADTElementNode implements BookListADTNode {
   public int count() { return 1+this.rest.count();}
 
   @Override
-  public BookListADTNode addFront(Book book) {
+  public listadt.BookListADTNode addFront(Book book) {
     return new BookListADTElementNode(book,this);
   }
 
   @Override
-  public BookListADTNode addBack(Book book) {
+  public listadt.BookListADTNode addBack(Book book) {
     this.rest = this.rest.addBack(book);
     return this;
   }
 
   @Override
-  public BookListADTNode add(int index,Book book) {
+  public listadt.BookListADTNode add(int index,Book book) {
     if (index==0) {
       return addFront(book);
     }
@@ -40,7 +40,7 @@ public class BookListADTElementNode implements BookListADTNode {
   }
 
   @Override
-  public BookListADTNode remove(Book book) {
+  public listadt.BookListADTNode remove(Book book) {
     if (this.book.equals(book)) {
       return this.rest;
     }
