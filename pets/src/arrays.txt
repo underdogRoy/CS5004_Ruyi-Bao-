@@ -1,0 +1,17 @@
+array
+good for:access to element
+because:efficient and use few memory
+less good for: add and delete
+because: the size is fixed
+
+ArrayList
+good for:access to element
+because:access to element through index,O(1)
+less good for:add and delete
+because:need to move i elements when add and delete at i, O(n)
+
+LinkedList
+good for:insert and delete
+because:just change the node next,O(1)
+less good for:access to element
+because:need to access elements from head to end, O(n)

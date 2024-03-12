@@ -1,0 +1,3 @@
+List<PetMammal> landBasedPetsNotOwnedByJohn = filterPets(pets, pet -> pet.isLandBased() && !pet.getOwner().equals("John Doe"));
+a.Predicate
+b.filter
