@@ -74,11 +74,12 @@ public class Handimp<C> implements Hand<C>{
 
   @Override
   public int rankSum() {
-    int sum=0;
+    /*int sum=0;
     for (C card:cards){
       sum+=((Card)card).getRank();
     }
-    return sum;
+    return sum;*/
+    return cards.stream().mapToInt(card -> ((Card)card).getRank()).sum();
   }
 
   @Override
