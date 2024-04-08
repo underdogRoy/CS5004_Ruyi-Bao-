@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"<Unnamed>","l":"Card"},{"p":"<Unnamed>","l":"CardTest"},{"p":"<Unnamed>","l":"Card.Color"},{"p":"<Unnamed>","l":"Hand"},{"p":"<Unnamed>","l":"Handimp"},{"p":"<Unnamed>","l":"HandTest"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"Card.Suit"},{"p":"<Unnamed>","l":"SuitComparator"},{"l":"所有类和接口","u":"allclasses-index.html"}];updateSearchResults();
+typeSearchIndex = [{"p":"<Unnamed>","l":"Coordinate"},{"p":"<Unnamed>","l":"MyPanel"},{"p":"<Unnamed>","l":"SnakeGame"},{"l":"所有类和接口","u":"allclasses-index.html"}];updateSearchResults();
