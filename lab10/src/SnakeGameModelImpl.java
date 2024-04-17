@@ -44,7 +44,6 @@ public class SnakeGameModelImpl implements SnakeGameModel {
 
     public void moveSnake () {
       Coordinate old_tail = snakeLoc.remove(snakeLoc.size()-1);
-      // TODO: what if size is 1
       // 2. get the loc of the old head
       int old_head_x = snakeLoc.get(0).x;
       int old_head_y = snakeLoc.get(0).y;
