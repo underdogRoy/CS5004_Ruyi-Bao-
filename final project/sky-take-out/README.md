@@ -70,8 +70,8 @@ This project is an online takeout ordering system developed using the Spring Boo
        }
 
        location /media {
-           root 配置媒体文件位置; # eg: D:/static
-           # 注：在 D:/static 目录下创建 media 文件夹
+           root configures the media file location; # eg: D:/static
+            # Note: Create a media folder in the D:/static directory
        }
    }
    ```
