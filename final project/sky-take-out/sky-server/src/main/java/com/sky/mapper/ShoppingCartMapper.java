@@ -1,55 +1,46 @@
 package com.sky.mapper;
 
-import java.util.List;
-
+import com.sky.entity.ShoppingCart;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.annotations.Delete;
-
-import com.sky.entity.ShoppingCart;
+import java.util.List;
 
 @Mapper
 public interface ShoppingCartMapper {
 
     /**
-     * 查询购物车
-     * 
+     * 动态条件查询
      * @param shoppingCart
-     * @return List<ShoppingCart>
+     * @return
      */
     List<ShoppingCart> list(ShoppingCart shoppingCart);
 
     /**
-     * 根据id更新购物车数量
-     * 
+     * 根据id修改商品数量
      * @param shoppingCart
      */
     @Update("update shopping_cart set number = #{number} where id = #{id}")
     void updateNumberById(ShoppingCart shoppingCart);
 
     /**
-     * 添加购物车
-     * 
+     * 插入购物车数据
      * @param shoppingCart
      */
-    @Insert("insert into shopping_cart (user_id, dish_id, setmeal_id, name, image, amount, number, dish_flavor, create_time) "
-            +
-            "values " +
-            "(#{userId}, #{dishId}, #{setmealId}, #{name}, #{image}, #{amount}, #{number}, #{dishFlavor}, #{createTime})")
+    @Insert("insert into shopping_cart (name, user_id, dish_id, setmeal_id, dish_flavor, number, amount, image, create_time) " +
+            " values (#{name},#{userId},#{dishId},#{setmealId},#{dishFlavor},#{number},#{amount},#{image},#{createTime})")
     void insert(ShoppingCart shoppingCart);
 
     /**
-     * 清空购物车
-     * 
+     * 根据用户id删除购物车数据
      * @param userId
      */
     @Delete("delete from shopping_cart where user_id = #{userId}")
     void deleteByUserId(Long userId);
 
     /**
-     * 根据id删除购物车
-     * 
+     * 根据id删除购物车数据
      * @param id
      */
     @Delete("delete from shopping_cart where id = #{id}")

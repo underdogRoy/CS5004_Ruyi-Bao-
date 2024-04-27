@@ -1,7 +1,5 @@
-package com.sky.constant;
-
 /**
- * 密码常量
+ * Password constants.
  */
 public class PasswordConstant {
 

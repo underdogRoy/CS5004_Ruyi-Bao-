@@ -1,17 +1,17 @@
 package com.sky.enumeration;
 
 /**
- * 数据库操作类型
+ * Enumeration representing types of database operations.
  */
 public enum OperationType {
 
     /**
-     * 更新操作
+     * Update operation.
      */
     UPDATE,
 
     /**
-     * 插入操作
+     * Insert operation.
      */
     INSERT
 

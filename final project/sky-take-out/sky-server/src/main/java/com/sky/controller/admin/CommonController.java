@@ -1,44 +1,57 @@
 package com.sky.controller.admin;
 
-import java.io.IOException;
-import java.util.UUID;
-
+import com.sky.constant.MessageConstant;
+import com.sky.result.Result;
+import com.sky.utils.AliOssUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.sky.result.Result;
+import java.io.IOException;
+import java.util.UUID;
 
-import lombok.extern.slf4j.Slf4j;
-
+/**
+ * 通用接口
+ */
 @RestController
 @RequestMapping("/admin/common")
+@Api(tags = "通用接口")
 @Slf4j
 public class CommonController {
 
+    @Autowired
+    private AliOssUtil aliOssUtil;
+
     /**
-     * 上传图片
-     * 
+     * 文件上传
      * @param file
      * @return
      */
     @PostMapping("/upload")
-    public Result<String> upload(MultipartFile file) {
-        log.info("上传图片：{}", file);
-        String originalFilename = file.getOriginalFilename();
-        String suffix = ".jpg";
-        if (originalFilename != null) {
-            suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
-        }
-        String fileName = UUID.randomUUID().toString() + suffix;
-        String imgUrl = "http://localhost/media/" + fileName;
+    @ApiOperation("文件上传")
+    public Result<String> upload(MultipartFile file){
+        log.info("文件上传：{}",file);
+
         try {
-            file.transferTo(new java.io.File("D:\\Variable\\nginx-1.24.0\\media\\" + fileName));
-            return Result.success(imgUrl);
-        } catch (IllegalStateException | IOException e) {
-            log.error("上传图片失败：{}", e);
-            return Result.error("上传图片失败");
+            //原始文件名
+            String originalFilename = file.getOriginalFilename();
+            //截取原始文件名的后缀   dfdfdf.png
+            String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
+            //构造新文件名称
+            String objectName = UUID.randomUUID().toString() + extension;
+
+            //文件的请求路径
+            String filePath = aliOssUtil.upload(file.getBytes(), objectName);
+            return Result.success(filePath);
+        } catch (IOException e) {
+            log.error("文件上传失败：{}", e);
         }
+
+        return Result.error(MessageConstant.UPLOAD_FAILED);
     }
 }

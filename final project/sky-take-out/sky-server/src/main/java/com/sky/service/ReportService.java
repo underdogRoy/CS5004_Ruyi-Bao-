@@ -1,28 +1,25 @@
 package com.sky.service;
 
-import java.time.LocalDate;
-
 import com.sky.vo.OrderReportVO;
 import com.sky.vo.SalesTop10ReportVO;
 import com.sky.vo.TurnoverReportVO;
 import com.sky.vo.UserReportVO;
 
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponse;
+import java.time.LocalDate;
 
 public interface ReportService {
 
     /**
-     * 营业额统计
-     * 
+     * 统计指定时间区间内的营业额数据
      * @param begin
      * @param end
      * @return
      */
-    TurnoverReportVO getTurnoverReport(LocalDate begin, LocalDate end);
+    TurnoverReportVO getTurnoverStatistics(LocalDate begin, LocalDate end);
 
     /**
-     * 根据时间区间统计用户数量
-     * 
+     * 统计指定时间区间内的用户数据
      * @param begin
      * @param end
      * @return
@@ -30,8 +27,7 @@ public interface ReportService {
     UserReportVO getUserStatistics(LocalDate begin, LocalDate end);
 
     /**
-     * 根据时间区间统计订单数量
-     * 
+     * 统计指定时间区间内的订单数据
      * @param begin
      * @param end
      * @return
@@ -39,8 +35,7 @@ public interface ReportService {
     OrderReportVO getOrderStatistics(LocalDate begin, LocalDate end);
 
     /**
-     * 查询指定时间区间内的销量排名top10
-     * 
+     * 统计指定时间区间内的销量排名前10
      * @param begin
      * @param end
      * @return
@@ -48,10 +43,8 @@ public interface ReportService {
     SalesTop10ReportVO getSalesTop10(LocalDate begin, LocalDate end);
 
     /**
-     * 导出excel
-     * 
-     * @param resp
+     * 导出运营数据报表
+     * @param response
      */
-    void exportExcel(HttpServletResponse resp);
-
+    void exportBusinessData(HttpServletResponse response);
 }

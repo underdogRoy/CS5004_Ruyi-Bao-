@@ -1,5 +1,6 @@
 package com.sky.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -7,8 +8,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
-// import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Data
 @Builder
@@ -34,10 +33,10 @@ public class Employee implements Serializable {
 
     private Integer status;
 
-    // @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 会导致前端接收到的时间格式不对
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;
 
-    // @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime;
 
     private Long createUser;
