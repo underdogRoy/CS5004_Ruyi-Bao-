@@ -1,34 +1,34 @@
-# 苍穹外卖
+# sky take out
 
-本项目是使用 Spring Boot 框架开发的一个在线外卖订购系统。
+This project is an online takeout ordering system developed using the Spring Boot framework.
 
-## 技术栈
+## Technology stack
 
-- 后端框架
-  - SpringBoot (3.1.2)
-  - mybatis
-- 数据库
-  - MySql
-  - Redis
-- 前端框架
-  - Vue
-  - Uniapp
-  - ElementUI
-- 前后端通信
-  - RESTful API
+- Backend framework
+   - SpringBoot (3.1.2)
+   - mybatis
+- database
+   - MySql
+   - Redis
+- Front-end framework
+   - Vue
+   - Uniapp
+   -ElementUI
+- Front-end and back-end communication
+   - RESTful API
 
-## Windows 开发环境搭建
+## Windows development environment setup
 
-1. 安装 Java JDK 17 并配置环境变量
-2. 安装 MySQL、Redis 数据库并创建相应数据库
+1. Install Java JDK 17 and configure environment variables
+2. Install MySQL and Redis databases and create corresponding databases
 
-   - 创建 MySQL 数据库与表: 运行 [mysql.sql](./demo/mysql.sql)
+    - Create MySQL database and tables: Run [mysql.sql]
 
-3. 安装 Maven 构建工具
-4. 下载安装 Nginx 并完成以下配置
+3. Install Maven
+4. Download and install Nginx and complete the following configurations
 
    ```
-   # 在 http 这一项下配置以下内容
+   # Configure the following content under the http item
 
    map $http_upgrade $connection_upgrade{
    	default upgrade;
@@ -49,13 +49,13 @@
            index  index.html index.htm;
        }
 
-       # 反向代理,处理管理端发送的请求
+       # Reverse proxy, handles requests sent by the management end
        location /api/ {
    		proxy_pass   http://localhost:8080/admin/;
            #proxy_pass   http://webservers/admin/;
        }
 
-   	# 反向代理,处理用户端发送的请求
+   	# Reverse proxy, handles requests sent by the client
        location /user/ {
            proxy_pass   http://webservers/user/;
        }
@@ -70,27 +70,27 @@
        }
 
        location /media {
-           root 配置媒体文件位置; # eg: D:/static
-           # 注：在 D:/static 目录下创建 media 文件夹
+           root configures the media file location; # eg: D:/static
+            # Note: Create a media folder in the D:/static directory
        }
    }
    ```
 
-5. 克隆项目到本地 `git clone https://github.com/Sonder-MX/sky-take-out.git `
-6. 修改配置文件 [application.yml](./sky-server/src/main/resources/application.yml)
+5. Clone the project locally https://github.com/underdogRoy/NEU_CS5004_24Spr_Ruyi-Bao-/final project/sky-take-out.git
+6. Modify the configuration file [application.yml](./sky-server/src/main/resources/application.yml)
 
    ```yml
    spring:
      datasource:
        url: jdbc:mysql://url
        username: root
-       password: 数据库密码
+       password: database password
      data:
        redis:
-         password: redis数据库密码
+         password: redis database password
    ```
 
-7. 在 [resources](./sky-server/src/main/resources/) 目录下新建 `application-env.yml` 文件，写入以下配置
+7. Create a new `application-env.yml` file in the [resources](./sky-server/src/main/resources/) directory and write the following configuration
 
    ```yml
    sky:
@@ -106,4 +106,4 @@
        refundNotifyUrl:
    ```
 
-8. 运行项目
+8. run final project/sky-take-out/sky-server/src/main/java/com/sky/SkyApplication.java
