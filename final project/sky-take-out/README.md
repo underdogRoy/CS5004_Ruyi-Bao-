@@ -2,7 +2,7 @@
 
 This project is an online takeout ordering system developed using the Spring Boot framework.
 ## Acknowledgements
-The development of the Sky-Take-Out project has been greatly guided by the Heima Spring Boot course available at Heima Platform.(http://yun.itheima.com/course/1029.html?cz). I extend my sincere gratitude for the comprehensive video tutorials and the invaluable support provided through the accompanying source codes.
+The development of the Sky-Take-Out project has been greatly guided by the Heima Spring Boot course available at Heima Platform.(http://yun.itheima.com/course/1029.html?cz). We extend our sincere gratitude for the comprehensive video tutorials and the invaluable support framework source codes.
 
 ## Technology stack
 
